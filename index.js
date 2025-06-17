@@ -1,21 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const app = document.getElementById("app");
-    app.innerHTML = \`
-        <h1>Grabbit App</h1>
-        <button id="listenToggle">🎤 Always Listening: Off</button>
-        <ul id="reminderList"></ul>
-    \`;
+  const app = document.getElementById("app");
 
-    let listening = false;
-    const toggle = document.getElementById("listenToggle");
-    const list = document.getElementById("reminderList");
+  app.innerHTML = `
+    <h1>Grabbit App</h1>
+    <button id="listenToggle">🔊 Always Listening: OFF</button>
+    <ul id="reminderList"></ul>
+  `;
 
-    toggle.onclick = () => {
-        listening = !listening;
-        toggle.textContent = `🎤 Always Listening: ${listening ? "On" : "Off"}`;
-        if (listening) {
-            alert("Hey Grabbit is now listening...");
-            list.innerHTML += "<li>Example Reminder: Buy Toothpaste at Safeway</li>";
-        }
-    };
+  let listening = false;
+  const toggle = document.getElementById("listenToggle");
+  const list = document.getElementById("reminderList");
+
+  toggle.onclick = () => {
+    listening = !listening;
+    toggle.textContent = `🔊 Always Listening: ${listening ? "ON" : "OFF"}`;
+    if (listening) {
+      alert("Hey Grabbit is now listening...");
+      list.innerHTML += `<li>Example Reminder: Buy Toothpaste at Safeway</li>`;
+    }
+  };
 });
